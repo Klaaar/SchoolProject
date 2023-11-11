@@ -1,7 +1,8 @@
 from django import forms
 from django.core.exceptions import ValidationError
-
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from .models import Advertisement
+
 
 class AdvertisementForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -21,3 +22,6 @@ class AdvertisementForm(forms.ModelForm):
         if title.startswith('?'):
             raise ValidationError('Заголовок не может начинаться с вопросительного знака.')
         return title
+
+
+

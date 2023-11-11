@@ -16,6 +16,7 @@ User = get_user_model()
 # Дата обновления
 
 # Create your models here.
+
 class Advertisement(models.Model):
     title = models.CharField("заголовок", max_length=128)
     description = models.TextField("описание")

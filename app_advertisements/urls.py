@@ -6,4 +6,5 @@ urlpatterns = [
     path('top-sellers/', top_sellers, name='top-sellers'),
     path('advertisement-post/', advertisement_post, name='adv-post'),
     path('advertisement/<int:pk>', advertisement_detail, name='adv-detail'),
+
 ]

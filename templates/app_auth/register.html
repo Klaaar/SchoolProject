@@ -1,6 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
+{% block title %}
+Регистрация
+{% endblock %}
+
+{% block content %}
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,7 +34,7 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="register.html">
+      <a class="nav-link active" aria-current="page" href="{% url 'reg' %}">
         <span style="font-weight: bold;">Регистрация</span>
       </a>
     </li>
@@ -58,7 +62,7 @@
       </div>
     </div>
   </div>
-    <form method="post">
+    <form method="post"> {% csrf_token %}
       <div class="row mb-3">
         <div class="col">
           <label class="col-sm-4 col-form-label offset-4">Username</label>
@@ -96,7 +100,7 @@
           <label class="col-sm-4 col-form-label offset-4">Password confirmation</label>
           <div class="col-sm-4 offset-4 w-25">
             <input type="password" class="form-control form-control-lg">
-            <div class="form-label bg-warning" style="margin: 10px 0px;">Ошибка (если будет)</div>
+
           </div>
         </div>
       </div>
@@ -109,4 +113,5 @@
   </div>
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+
+{% endblock %}

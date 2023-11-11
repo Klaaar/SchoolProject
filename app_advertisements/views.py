@@ -44,3 +44,6 @@ def advertisement_detail(request,pk):
         'advertisement': advertisement,
     }
     return render(request, 'app_advertisements/advertisement.html', context)
+
+
+
